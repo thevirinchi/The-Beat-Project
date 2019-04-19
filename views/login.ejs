@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<META charset="UTF-8">
+		<META name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<TITLE>The Beat Project</TITLE>
+		<LINK rel="stylesheet" href="css/logsign.css">
+		<LINK rel="stylesheet" href="css/index.css">
+		<!-- Cool Anims -->
+		<LINK rel="stylesheet" href="css/animate.min.css">
+		<!-- Link Anims -->
+		<LINK rel="stylesheet" href="css/component.css">
+		<!-- Wows Anims -->
+		<SCRIPT src="js/wow.min.js"></SCRIPT>
+		<SCRIPT>new WOW().init();</SCRIPT>
+		<!-- Icons -->
+		<SCRIPT defer src="js/all.js"></SCRIPT>
+		<LINK href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!-- Fonts -->
+		<LINK href="https://fonts.googleapis.com/css?family=Bangers|Comfortaa|Major+Mono+Display|Nunito|Pacifico|Quicksand|Rubik|Source+Sans+Pro" rel=  "stylesheet">
+		<!-- Additional styles -->
+		<STYLE>
+			.pointer:hover{cursor:pointer;}
+			.normal:hover{cursor:default;}
+			.pattern{background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-	2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%23222222' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");}
+			footer{background-color: #2196f3;background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236ec6ff' fill-opacity='0.19'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+		</STYLE>
+	</HEAD>
+	<BODY>
+		<!-- Navbar Container -->
+		<DIV class="zk-top zk-black pattern" id="navBar" style="min-height:80px;z-index:4">
+			<DIV class="zk-bar zk-card zk-navbar zk-padding-small" id="myNavbar" style="color:white;">
+				<NAV class="cl-effect-1 wow rotateInDownLeft"><B><A href="/" class="zk-bar-item zk-wide" style="font-size:22px;margin-top:12px;font-family: 'Bangers', cursive;"><!--<IMG src="imgs/logo.png" style="height:60px;"/>--><I class="fa fa-heartbeat"></I></A></B></NAV>
+				<NAV class="zk-right zk-hide-small cl-effect-11" style="margin-top:16px;font-size:19px;margin-right:16px;">
+					<A href="/" class="wow slideInUp" style="text-decoration:none;animation-delay:0.02s;" data-hover="The Beat Project">The Beat Project</A>
+				</NAV>
+			</DIV>
+		</DIV>
+
+		<!-- Login / SignUp Container -->
+		<% if(message.length > 0) { %>
+		 <div class="container zk-red"><%= message %></div>
+		<% } %>
+
+		<DIV class="container" style="font-family: 'Source Sans Pro', sans-serif;;">
+			<DIV class="message signup" style="background:#000;">
+	    	<DIV class="btn-wrapper">
+					<BUTTON class="button pointer" id="signup">SignUp</BUTTON>
+	      	<BUTTON class="button pointer" id="login"> Login</BUTTON>
+	    	</DIV>
+	  	</DIV>
+	  	<DIV class="form form--signup">
+	    	<DIV class="form--heading normal">Welcome! Sign Up</DIV>
+	    	<FORM autocomplete="off" action="/signup" method="POST">
+	      	<INPUT type="text" name="name" placeholder="Name" style="background:#1b1b1b;">
+	      	<INPUT type="text" name="username" placeholder="Email" style="background:#1b1b1b;">
+	      	<INPUT type="password" name="password" placeholder="Password" style="background:#1b1b1b;">
+	      	<BUTTON class="button pointer" style="margin-top:16px">Sign Up</BUTTON>
+	    	</FORM>
+	  	</DIV>
+	  	<DIV class="form form--login">
+	    	<DIV class="form--heading normal">Welcome back! </DIV>
+	    	<FORM autocomplete="on" action="/login" method="POST">
+	      	<INPUT type="text" name="username" placeholder="Name" style="background:#1b1b1b;">
+	      	<INPUT type="password" name="password" placeholder="Password" style="background:#1b1b1b;">
+	      	<BUTTON class="button pointer" style="margin-top:16px;">Login</BUTTON>
+	    	</FORM>
+	  	</DIV>
+		</DIV>
+
+		<!-- Scripts for login/signup form -->
+	  <SCRIPT src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></SCRIPT>
+		<SCRIPT  src="js/logsign.js"></SCRIPT>
+	</BODY>
+</HTML>
