@@ -67,7 +67,7 @@
     </SCRIPT>
   </HEAD>
   <BODY class="zk-noselect" style="background:#1b1b1b;">
-    <MAIN style="min-height:100%;">
+    <MAIN>
 			<!-- Navbar Container -->
 			<DIV class="zk-top zk-black pattern" id="navBar" style="min-height:80px;z-index:4">
 				<DIV class="zk-bar zk-card zk-navbar zk-padding-small" id="myNavbar" style="color:white;">
@@ -78,73 +78,58 @@
 				</DIV>
 			</DIV>
 
-      <!-- Sidebar/menu -->
-  		<NAV class="zk-sidebar zk-collapse zk-black zk-animate-left" style="z-index:3;width:300px;padding-top:80px;overflow:hidden" id="mySidebar">
-  			<BR>
-  			<DIV class="container row" style="padding-left:16px">
-  				<DIV class="col s8 bar">
-  					<!-- Display Username -->
-            Welcome <%= user.username %>
-  				</DIV>
-  			</DIV>
-  			<HR>
-  			<DIV class="container" style="padding-left:16px">
-  				<A href="dash.php" class="normal" style="text-decoration:none"><H5>Dashboard</H5></A>
-  			</DIV>
-  			<DIV class="bar-block">
-  				<TABLE style="margin-left:10px" border="0" width="100%">
-  					<TR>
-  						<TD>
-  							<I class="material-icons animated infinite bounce delay-2s" style="color:#2196F3; display:inline;">info</I>
-  						</TD>
-  						<TD>
-  							<A href="/profile" class="bar-item button padding"><b>&nbsp; Current Data</b></A>
-  						</TD>
-  					</TR>
-  					<TR>
-  						<TD>
-  							<I class="material-icons" style=" color:#e91e63; display:inline;">library_books</I>
-  						</TD>
-  						<TD>
-  							<A href="#" class="bar-item button padding"><b>&nbsp; History</b></A>
-  						</TD>
-  					</TR>
-  					<TR>
-  						<TD>
-  							<I class="material-icons" style="color:#FFEB3B; display:inline;">exit_to_app</I>
-  						</TD>
-  						<TD>
-  							<A href="/logout" class="bar-item button padding"><b>&nbsp; Signout</b></A>
-  						</TD>
-  					</TR>
-  				</TABLE>
-  			</DIV>
-  		</NAV>
-
-      <!-- Graph Container -->
-      <DIV class="zk-container" style="margin-left:300px">
-        <DIV id="chartContainer" style="height: 370px; width: 100%;margin-top:100px;"/>
+      <!-- Profile Container -->
+      <DIV class="container" style="margin-top:80px; width:100%;">
+        <DIV class="form form--login">
+  	    	<DIV class="form--heading normal">Welcome back! </DIV>
+  	    	<FORM autocomplete="on" action="/login" method="POST">
+  	      	<INPUT type="text" name="username" placeholder="Name" style="background:#1b1b1b;">
+  	      	<INPUT type="password" name="password" placeholder="Password" style="background:#1b1b1b;">
+  	      	<BUTTON class="button pointer" style="margin-top:16px;">Login</BUTTON>
+  	    	</FORM>
+  	  	</DIV>
+        <FORM autocomplete="off" method="POST" action="/store">
+          <LABEL for="age">Age: </LABEL>
+          <INPUT type="number" name="age" id="age" placeholder="0"/><BR>
+          <LABEL for="gender">Gender: </LABEL><BR>
+          <DIV id="gender">
+            <INPUT type="radio" name="male" id="male" value="male"/>
+            <LABEL for="male">Male</LABEL><BR>
+            <INPUT type="radio" name="female" id="female" value="female"/>
+            <LABEL for="female">Feale</LABEL><BR>
+          </DIV>
+          <LABEL for="thestbps">Thestbps: </LABEL>
+          <INPUT type="number" name="thestbps" id="thestbps" placeholder="0"/>
+          <LABEL for="cp">Cp: </LABEL>
+          <DIV id="cp">
+            <INPUT type="radio" name="male" id="male" value="male"/>
+            <LABEL for="male">Male</LABEL><BR>
+            <INPUT type="radio" name="female" id="female" value="female"/>
+            <LABEL for="female">Feale</LABEL><BR>
+          </DIV>
+          <LABEL for="thestbps">Thestbps</LABEL>
+          <INPUT type="number" name="thestbps" id="thestbps" placeholder="0"/>
+          <LABEL for="thestbps">Thestbps</LABEL>
+          <INPUT type="number" name="thestbps" id="thestbps" placeholder="0"/>
+        </FORM>
       </DIV>
-
-      <SCRIPT type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></SCRIPT>
-      <SCRIPT src="https://canvasjs.com/assets/script/canvasjs.min.js"></SCRIPT>
+      
+      <!-- Footer Container -->
+      <FOOTER class="zk-container zk-padding-32 zk-blue zk-bottom" style="padding-left:428px;padding-right:128px;position:bottom;z-index:1;">
+        <DIV>
+          <NAV style="font-size:18px;margin-right:16px;" class="cl-effect-18">
+            <SPAN style="font-family: 'Pacifico', cursive;" class="normal">Follow Us On</SPAN>
+            <A href="#" class="wow slideInDown" style="text-decoration:none;margin-left:10px;animation-delay:0.04s;"><i class="fab fa-google-plus-g"></i></A>
+            <A href="#" class="wow slideInUp" style="text-decoration:none;margin-left:10px;animation-delay:0.06s;"><i class="fab fa-youtube"></i></A>
+            <A href="#" class="wow slideInDown" style="text-decoration:none;margin-left:10px;animation-delay:0.08s;"><i class="fab fa-twitter"></i></A>
+            <A href="#" class="wow slideInUp" style="text-decoration:none;margin-left:10px;animation-delay:0.1s;"><i class="fab fa-facebook-f"></i></A>
+          </NAV>
+        </DIV>
+        <HR>
+        <CENTER class="wow tada normal" style="animation-delay:1s;font-family: 'Major Mono Display', monospace;">
+            <H4>The Beat Project&nbsp;<I class="far fa-copyright"></I>&nbsp;2018-2019</H4>
+        </CENTER>
+      </FOOTER>
     </MAIN>
-
-    <!-- Footer Container -->
-    <FOOTER class="zk-container zk-padding-32 zk-blue zk-bottom" style="padding-left:428px;padding-right:128px;position:bottom;z-index:1;">
-      <DIV>
-        <NAV style="font-size:18px;margin-right:16px;" class="cl-effect-18">
-          <SPAN style="font-family: 'Pacifico', cursive;" class="normal">Follow Us On</SPAN>
-          <A href="#" class="wow slideInDown" style="text-decoration:none;margin-left:10px;animation-delay:0.04s;"><i class="fab fa-google-plus-g"></i></A>
-          <A href="#" class="wow slideInUp" style="text-decoration:none;margin-left:10px;animation-delay:0.06s;"><i class="fab fa-youtube"></i></A>
-          <A href="#" class="wow slideInDown" style="text-decoration:none;margin-left:10px;animation-delay:0.08s;"><i class="fab fa-twitter"></i></A>
-          <A href="#" class="wow slideInUp" style="text-decoration:none;margin-left:10px;animation-delay:0.1s;"><i class="fab fa-facebook-f"></i></A>
-        </NAV>
-      </DIV>
-      <HR>
-      <CENTER class="wow tada normal" style="animation-delay:1s;font-family: 'Major Mono Display', monospace;">
-          <H4>The Beat Project&nbsp;<I class="far fa-copyright"></I>&nbsp;2018-2019</H4>
-      </CENTER>
-    </FOOTER>
   </BODY>
 </HTML>
