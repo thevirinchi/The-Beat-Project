@@ -30,65 +30,66 @@
 		<!-- Navbar Container -->
 		<DIV class="zk-top zk-black pattern" id="navBar" style="min-height:80px;z-index:4">
 			<DIV class="zk-bar zk-card zk-navbar zk-padding-small" id="myNavbar" style="color:white;">
-				<NAV class="cl-effect-1 wow rotateInDownLeft"><B><A href="/" class="zk-bar-item zk-wide" style="font-size:22px;margin-top:12px;font-family: 'Bangers', cursive;"><!--<IMG src="imgs/logo.png" style="height:60px;"/>--><I class="fa fa-heartbeat"></I></A></B></NAV>
+				<NAV class="cl-effect-1 wow rotateInDownLeft"><B><A href="/" class="zk-bar-item zk-wide" style="font-size:22px;margin-top:12px;font-family: 'Bangers', cursive;"><I class="fa fa-heartbeat"></I></A></B></NAV>
 				<NAV class="zk-right zk-hide-small cl-effect-11" style="margin-top:16px;font-size:19px;margin-right:16px;">
 					<A href="/" class="wow slideInUp" style="text-decoration:none;animation-delay:0.02s;" data-hover="The Beat Project">The Beat Project</A>
 				</NAV>
 			</DIV>
 		</DIV>
 
-		<!-- Login / SignUp Container -->
-		<DIV style="height: 100vh;margin-top:135px">
-			<% if(message.length > 0) { %>
-			 <div class="container zk-red"><%= message %></div>
-			<% } %>
+		<DIV style="display: flex;
+  flex-direction: column;justify-content:center;min-width:100%;min-height:100%">
+			<!-- Login / SignUp Container -->
+				<% if(message.length > 0) { %>
+				 <div class="container zk-red"><%= message %></div>
+				<% } %>
 
-			<DIV class="container" style="font-family: 'Source Sans Pro', sans-serif;">
-				<DIV class="message signup" style="background:#000;">
-		    	<DIV class="btn-wrapper">
-						<BUTTON class="button pointer" id="signup">SignUp</BUTTON>
-		      	<BUTTON class="button pointer" id="login"> Login</BUTTON>
-		    	</DIV>
-		  	</DIV>
-		  	<DIV class="form form--signup">
-		    	<DIV class="form--heading normal">Welcome! Sign Up</DIV>
-		    	<FORM autocomplete="off" action="/signup" method="POST">
-		      	<INPUT type="text" name="name" placeholder="Name" style="background:#1b1b1b;">
-		      	<INPUT type="text" name="username" placeholder="Email" style="background:#1b1b1b;">
-		      	<INPUT type="password" name="password" placeholder="Password" style="background:#1b1b1b;">
-		      	<BUTTON class="button pointer" style="margin-top:16px">Sign Up</BUTTON>
-		    	</FORM>
-		  	</DIV>
-		  	<DIV class="form form--login">
-		    	<DIV class="form--heading normal">Welcome back! </DIV>
-		    	<FORM autocomplete="on" action="/login" method="POST">
-		      	<INPUT type="text" name="username" placeholder="Name" style="background:#1b1b1b;">
-		      	<INPUT type="password" name="password" placeholder="Password" style="background:#1b1b1b;">
-		      	<BUTTON class="button pointer" style="margin-top:16px;">Login</BUTTON>
-		    	</FORM>
-		  	</DIV>
-			</DIV>
-		</DIV>
+				<DIV class="container zk-center" style="font-family: 'Source Sans Pro', sans-serif;margin-left:auto;margin-right:auto;margin-bottom:80px;;">
+					<DIV class="message signup" style="background:#000;">
+			    	<DIV class="btn-wrapper">
+							<BUTTON class="button pointer" id="signup">SignUp</BUTTON>
+			      	<BUTTON class="button pointer" id="login"> Login</BUTTON>
+			    	</DIV>
+			  	</DIV>
+			  	<DIV class="form form--signup">
+			    	<DIV class="form--heading normal">Welcome! Sign Up</DIV>
+			    	<FORM autocomplete="off" action="/signup" method="POST">
+			      	<INPUT type="text" name="name" placeholder="Name" style="background:#1b1b1b;">
+			      	<INPUT type="text" name="username" placeholder="Email" style="background:#1b1b1b;">
+			      	<INPUT type="password" name="password" placeholder="Password" style="background:#1b1b1b;">
+			      	<BUTTON class="button pointer" style="margin-top:16px">Sign Up</BUTTON>
+			    	</FORM>
+			  	</DIV>
+			  	<DIV class="form form--login">
+			    	<DIV class="form--heading normal">Welcome back! </DIV>
+			    	<FORM autocomplete="on" action="/login" method="POST">
+			      	<INPUT type="text" name="username" placeholder="Name" style="background:#1b1b1b;">
+			      	<INPUT type="password" name="password" placeholder="Password" style="background:#1b1b1b;">
+			      	<BUTTON class="button pointer" style="margin-top:16px;">Login</BUTTON>
+			    	</FORM>
+			  	</DIV>
+				</DIV>
 
-		<!-- Scripts for login/signup form -->
-	  <SCRIPT src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></SCRIPT>
-		<SCRIPT  src="js/logsign.js"></SCRIPT>
+			<!-- Scripts for login/signup form -->
+		  <SCRIPT src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></SCRIPT>
+			<SCRIPT  src="js/logsign.js"></SCRIPT>
 
-		<!-- Footer Container -->
-	 <FOOTER class="zk-container zk-padding-32 zk-blue" style="padding-left:128px;padding-right:128px;min-width:100%">
-		 <DIV>
-			 <NAV style="font-size:18px;margin-right:16px;" class="cl-effect-18">
-				 <SPAN style="font-family: 'Pacifico', cursive;" class="normal">Follow Us On</SPAN>
-				 <A href="#" class="wow slideInDown" style="text-decoration:none;margin-left:10px;animation-delay:0.04s;"><i class="fab fa-google-plus-g"></i></A>
-				 <A href="#" class="wow slideInUp" style="text-decoration:none;margin-left:10px;animation-delay:0.06s;"><i class="fab fa-youtube"></i></A>
-				 <A href="#" class="wow slideInDown" style="text-decoration:none;margin-left:10px;animation-delay:0.08s;"><i class="fab fa-twitter"></i></A>
-				 <A href="#" class="wow slideInUp" style="text-decoration:none;margin-left:10px;animation-delay:0.1s;"><i class="fab fa-facebook-f"></i></A>
-			 </NAV>
-		 </DIV>
-		 <HR>
-		 <CENTER class="wow tada normal" style="animation-delay:1s;font-family: 'Major Mono Display', monospace;">
-				 <H4>The Beat Project&nbsp;<I class="far fa-copyright"></I>&nbsp;2018-2019</H4>
-		 </CENTER>
-	 </FOOTER>
+			<!-- Footer Container -->
+		 <FOOTER class="zk-container zk-padding-32 zk-blue zk-bottom" style="padding-left:128px;padding-right:128px;min-width:100%;">
+			 <DIV>
+				 <NAV style="font-size:18px;margin-right:16px;" class="cl-effect-18">
+					 <SPAN style="font-family: 'Pacifico', cursive;" class="normal">Follow Us On</SPAN>
+					 <A href="#" class="wow slideInDown" style="text-decoration:none;margin-left:10px;animation-delay:0.04s;"><i class="fab fa-google-plus-g"></i></A>
+					 <A href="#" class="wow slideInUp" style="text-decoration:none;margin-left:10px;animation-delay:0.06s;"><i class="fab fa-youtube"></i></A>
+					 <A href="#" class="wow slideInDown" style="text-decoration:none;margin-left:10px;animation-delay:0.08s;"><i class="fab fa-twitter"></i></A>
+					 <A href="#" class="wow slideInUp" style="text-decoration:none;margin-left:10px;animation-delay:0.1s;"><i class="fab fa-facebook-f"></i></A>
+				 </NAV>
+			 </DIV>
+			 <HR>
+			 <CENTER class="wow tada normal" style="animation-delay:1s;font-family: 'Major Mono Display', monospace;">
+					 <H4>The Beat Project&nbsp;<I class="far fa-copyright"></I>&nbsp;2018-2019</H4>
+			 </CENTER>
+		 </FOOTER>
+	 </DIV>
 	</BODY>
 </HTML>
